@@ -1,0 +1,42 @@
+<!-- dialog_person_type.xml -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Escolha o tipo de pessoa:"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radioFisica"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pessoa Física"/>
+
+        <RadioButton
+            android:id="@+id/radioJuridica"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pessoa Jurídica"/>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnConfirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/thomas_green"
+        android:text="Confirmar"/>
+</LinearLayout>
