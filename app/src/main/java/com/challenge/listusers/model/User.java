@@ -2,10 +2,14 @@ package com.challenge.listusers.model;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+import androidx.room.TypeConverters;
+
+import com.challenge.listusers.Utils;
 
 import java.util.Date;
 
 @Entity(tableName = "users")
+@TypeConverters(Utils.class)
 public class User {
     @PrimaryKey(autoGenerate = true)
     private long id;

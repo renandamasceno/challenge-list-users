@@ -7,8 +7,11 @@ import android.widget.Button;
 import android.widget.RadioGroup;
 
 import androidx.appcompat.app.AlertDialog;
+import androidx.room.TypeConverter;
 
 import com.google.android.material.textfield.TextInputLayout;
+
+import java.util.Date;
 
 public class Utils {
 
@@ -42,5 +45,15 @@ public class Utils {
 
     public static void updateHintBasedOnPersonType(TextInputLayout editText, String newHint) {
         editText.setHint(newHint);
+    }
+
+    @TypeConverter
+    public static Date fromTimestamp(Long value) {
+        return value == null ? null : new Date(value);
+    }
+
+    @TypeConverter
+    public static Long dateToTimestamp(Date date) {
+        return date == null ? null : date.getTime();
     }
 }
