@@ -3,6 +3,8 @@ package com.challenge.listusers.network.service;
 import com.challenge.listusers.model.User;
 import com.challenge.listusers.network.model.ApiResponse;
 
+import javax.inject.Inject;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 
@@ -10,6 +12,7 @@ import retrofit2.Callback;
 public class UserService {
     private final ApiService apiService;
 
+    @Inject
     public UserService() {
         apiService = RetrofitClient.getClient().create(ApiService.class);
     }

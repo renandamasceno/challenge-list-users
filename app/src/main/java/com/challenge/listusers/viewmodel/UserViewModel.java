@@ -46,6 +46,10 @@ public class UserViewModel extends ViewModel {
         userRepository.delete(user);
     }
 
+    public LiveData<Boolean> isUsernameAvailable(String username) {
+        return userRepository.isUsernameAvailable(username);
+    }
+
     public void sendUser(User user) {
         userService.sendUser(user, new Callback<ApiResponse>() {
             @Override

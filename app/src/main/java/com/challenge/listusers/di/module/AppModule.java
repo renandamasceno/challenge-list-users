@@ -7,6 +7,7 @@ import androidx.room.Room;
 import com.challenge.listusers.data.db.AppDatabase;
 import com.challenge.listusers.data.db.UserDao;
 import com.challenge.listusers.data.repository.UserRepository;
+import com.challenge.listusers.network.service.UserService;
 
 import dagger.Module;
 import dagger.Provides;
@@ -31,5 +32,10 @@ public class AppModule {
     @Provides
     public UserRepository provideUserRepository(UserDao userDao) {
         return new UserRepository(userDao);
+    }
+
+    @Provides
+    public UserService provideUserService() {
+        return new UserService();
     }
 }

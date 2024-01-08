@@ -24,4 +24,7 @@ public interface UserDao {
 
     @Query("SELECT * FROM users")
     LiveData<List<User>> getAllUsers();
+
+    @Query("SELECT COUNT(*) == 0 FROM users WHERE username = :username")
+    LiveData<Boolean> isUsernameAvailable(String username);
 }

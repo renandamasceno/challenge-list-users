@@ -22,6 +22,10 @@ public class UserRepository {
         return userDao.getAllUsers();
     }
 
+    public LiveData<Boolean> isUsernameAvailable(String username) {
+        return userDao.isUsernameAvailable(username);
+    }
+
     public void insert(User user) {
         Executors.newSingleThreadExecutor().execute(() -> userDao.insert(user));
     }

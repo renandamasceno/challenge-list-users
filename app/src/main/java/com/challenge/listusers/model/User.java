@@ -4,7 +4,7 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 import androidx.room.TypeConverters;
 
-import com.challenge.listusers.Utils;
+import com.challenge.listusers.util.Utils;
 
 import java.util.Date;
 

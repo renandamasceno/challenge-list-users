@@ -4,7 +4,7 @@ import androidx.room.Database;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 
-import com.challenge.listusers.Utils;
+import com.challenge.listusers.util.Utils;
 import com.challenge.listusers.model.User;
 
 @Database(entities = {User.class}, version = 1, exportSchema = false)
