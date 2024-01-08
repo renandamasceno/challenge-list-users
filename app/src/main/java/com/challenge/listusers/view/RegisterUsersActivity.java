@@ -2,21 +2,18 @@ package com.challenge.listusers.view;
 
 import static com.challenge.listusers.Utils.showPersonTypeDialog;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.RadioGroup;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CircleCrop;
 import com.challenge.listusers.R;
 import com.challenge.listusers.Utils;
 import com.challenge.listusers.databinding.ActivityRegisterUsersBinding;
-import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
+import com.google.android.material.appbar.MaterialToolbar;
+
+import java.util.Objects;
 
 public class RegisterUsersActivity extends AppCompatActivity {
 
@@ -25,9 +22,11 @@ public class RegisterUsersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         ActivityRegisterUsersBinding binding = ActivityRegisterUsersBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        showPersonTypeDialog(this,
-                () -> Utils.updateHintBasedOnPersonType(findViewById(R.id.cpf_cnpj_txt_input_layout), "CPF"),
-                () -> Utils.updateHintBasedOnPersonType(findViewById(R.id.cpf_cnpj_txt_input_layout), "CNPJ")
+        onBackPressedToolBar(binding);
+        showPersonTypeDialog(
+                this,
+                () -> Utils.updateHintBasedOnPersonType(binding.cpfCnpjTxtInputLayout, "CPF"),
+                () -> Utils.updateHintBasedOnPersonType(binding.cpfCnpjTxtInputLayout, "CNPJ")
         );
 
         Glide.with(this)
@@ -37,6 +36,16 @@ public class RegisterUsersActivity extends AppCompatActivity {
                 .transform(new CircleCrop())
                 .into(binding.registerImgView);
 
+    }
+
+    private void onBackPressedToolBar(ActivityRegisterUsersBinding binding) {
+        MaterialToolbar toolbar = binding.registerToolbar;
+        setSupportActionBar(toolbar);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        toolbar.setNavigationOnClickListener(view -> {
+            onBackPressed();
+        });
     }
 
 }

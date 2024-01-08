@@ -72,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:textSize="16sp"
-                tools:text="08133504333" />
+                tools:text="08119904355" />
         </LinearLayout>
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

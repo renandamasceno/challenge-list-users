@@ -20,11 +20,10 @@
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/list_user_toolbar"
         android:layout_above="@id/add_fab"
+        android:layout_below="@id/list_user_toolbar"
         android:padding="16dp"
-        tools:listitem="@layout/item_list_users"
-        />
+        tools:listitem="@layout/item_list_users" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add_fab"
@@ -34,12 +33,12 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
+        android:contentDescription="@null"
         android:src="@drawable/baseline_add_24"
         app:backgroundTint="@color/thomas_green"
         app:elevation="6dp"
         app:maxImageSize="48dp"
         app:shapeAppearance="@style/RoundedShape"
-        app:tint="@color/white"
-        android:contentDescription="TODO" />
+        app:tint="@color/white" />
 
 </RelativeLayout>

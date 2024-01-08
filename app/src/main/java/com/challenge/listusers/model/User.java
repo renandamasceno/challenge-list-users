@@ -1,8 +1,15 @@
 package com.challenge.listusers.model;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.util.Date;
 
+@Entity(tableName = "users")
 public class User {
+    @PrimaryKey(autoGenerate = true)
+    private long id;
+
     private String name;
     private String username;
     private String password;
@@ -14,6 +21,19 @@ public class User {
     private String cpfCnpj;
 
     public User() {
+    }
+
+    public User(String name, String username, String password, String image, String address,
+                String email, Date dateBirth, int gender, String cpfCnpj) {
+        this.name = name;
+        this.username = username;
+        this.password = password;
+        this.image = image;
+        this.address = address;
+        this.email = email;
+        this.dateBirth = dateBirth;
+        this.gender = gender;
+        this.cpfCnpj = cpfCnpj;
     }
 
     public String getName() {
@@ -86,5 +106,13 @@ public class User {
 
     public void setCpfCnpj(String cpfCnpj) {
         this.cpfCnpj = cpfCnpj;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }
